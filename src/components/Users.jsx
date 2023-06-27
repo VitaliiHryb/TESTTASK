@@ -5,7 +5,7 @@ import './Users.css';
 const Users = () => {
   return (
     <div className="users-container">
-      <h1>Working with GET request</h1>
+      <h2 className="working_with-get">Working with GET request</h2>
       <div className="user-container">
         <div className="block">
           <img src={Photo} alt="No user" />

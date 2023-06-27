@@ -22,8 +22,10 @@ const Working = () => {
 
   return (
     <div className="working-container">
-      <h1>Working with POST request</h1>
-      <form onSubmit={handleSubmit}>
+      <div className="working-wrapper">
+        <h1 className="working_title">Working with POST request</h1>
+      </div>
+      <form className="working_form" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Your name"

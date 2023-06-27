@@ -8,13 +8,9 @@
 .user-container {
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-h1 {
-  font-size: 24px;
 }
 
 .block {
@@ -49,4 +45,10 @@ h1 {
   margin-bottom: 140px;
   width: 120px;
   height: 34px;
+}
+
+.working_with-get {
+  margin: 140px 0 70px 0;
+  font-size: 40px;
+  line-height: 40px;
 }

@@ -2,16 +2,27 @@
   display: flex;
   flex-direction: column;
   width: 380px;
+  justify-content: center;
+  align-items: center;
 }
 
-h1 {
+.working-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.working_title {
   font-size: 24px;
+  width: 328px;
+  text-align: center;
+  margin: 0;
   margin-bottom: 20px;
 }
 
-form {
+.working_form {
   display: flex;
   flex-direction: column;
+  width: 328px;
 }
 
 input[type='radio'] {
@@ -21,7 +32,7 @@ input[type='radio'] {
 input[type='text'],
 input[type='email'],
 input[type='tel'] {
-  width: 380px;
+  width: 328px;
   height: 54px;
   flex-shrink: 0;
   border-radius: 4px;
@@ -67,6 +78,7 @@ label {
 
 .add-photo_wrap {
   display: flex;
+  /* width: 328px; */
 }
 
 button[type='add-photo'] {
@@ -85,7 +97,7 @@ button[type='upload-photo'] {
   color: #888888;
   padding: 10px 20px;
   border-radius: 1px;
-  min-width: 328px;
+  min-width: 245px;
   height: 54px;
 }
 

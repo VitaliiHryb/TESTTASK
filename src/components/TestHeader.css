@@ -1,16 +1,15 @@
-.container {
+.test-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 16px;
   width: 100%;
   /* background-color: #f2f2f2; */
   background-color: #fff;
@@ -23,7 +22,7 @@
 
 .logo img {
   height: 40px;
-  margin-right: 10px;
+  width: 104px;
 }
 
 .content {
@@ -49,22 +48,8 @@ p {
   margin-bottom: 20px;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: hsl(56, 79%, 62%);
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  width: 100px;
-}
-
 .users {
   margin-right: 10px;
-}
-
-.sing {
-  margin-right: 16px;
 }
 
 .test-assignment {

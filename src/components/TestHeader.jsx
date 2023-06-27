@@ -5,7 +5,7 @@ import '../components/TestHeader.css';
 
 const TestHeader = () => {
   return (
-    <div className="container">
+    <div className="test-container">
       <div className="header">
         <div className="logo">
           <img src={Logo} alt="Logo" />
@@ -19,7 +19,12 @@ const TestHeader = () => {
       </div>
       <div
         className="content"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          color: '#fff',
+        }}
       >
         <h2 className="test-assignment">
           Test assignment for front-end developer
