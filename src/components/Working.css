@@ -1,0 +1,97 @@
+.working-container {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type='radio'] {
+  margin-right: 12px;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'] {
+  width: 380px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: 1px solid #d0cfcf;
+  color: #7e7e7e;
+  font-size: 16px;
+  font-family: Nunito;
+  line-height: 26px;
+  text-align: left;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+label {
+  margin-bottom: 7px;
+}
+
+.upload [type='submit'] {
+  padding: 10px 20px;
+  border: 1px solid black;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 47px;
+}
+
+.select-position {
+  line-height: 25px;
+  margin-bottom: 14px;
+}
+
+.add-photo_wrap {
+  display: flex;
+}
+
+button[type='add-photo'] {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 1px;
+  margin-bottom: 10px;
+  height: 54px;
+}
+
+button[type='upload-photo'] {
+  background-color: #ffffff;
+  border: 1px solid #888888;
+  color: #888888;
+  padding: 10px 20px;
+  border-radius: 1px;
+  min-width: 328px;
+  height: 54px;
+}
+
+button[type='upload'] {
+  background-color: #b4b4b4;
+  color: rgba(255, 255, 255, 0.87);
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
