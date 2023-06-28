@@ -11,9 +11,7 @@ const TestHeader = () => {
           <img src={Logo} alt="Logo" />
         </div>
         <div className="buttons">
-          <button div className="users">
-            Users
-          </button>
+          <button className="users">Users</button>
           <button className="sing">Sign up</button>
         </div>
       </div>
