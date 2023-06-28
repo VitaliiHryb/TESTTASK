@@ -20,8 +20,8 @@ body {
 
 button {
   padding: 10px 20px;
-  background-color: hsl(56, 79%, 62%);
-  color: var(--black-87, rgba(0, 0, 0, 0.87));
+  background-color: #f4e041;
+  color: #000000de;
   border: none;
   border-radius: 20px;
   cursor: pointer;

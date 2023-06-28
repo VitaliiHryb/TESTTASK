@@ -5,7 +5,7 @@ const Working = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [position, setPosition] = useState('');
+  const [position, setPosition] = useState('Front-end developer');
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -32,21 +32,21 @@ const Working = () => {
           value={name}
           onChange={e => setName(e.target.value)}
         />
-        <br />
+
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
-        <br />
+
         <input
           type="tel"
           placeholder="Phone"
           value={phone}
           onChange={e => setPhone(e.target.value)}
         />
-        <br />
+
         <div className="options-container">
           <p className="select-position">Select your position:</p>
           <label>
@@ -58,7 +58,7 @@ const Working = () => {
             />
             Front-end developer
           </label>
-          <br />
+
           <label>
             <input
               type="radio"
@@ -68,7 +68,7 @@ const Working = () => {
             />
             Backend developer
           </label>
-          <br />
+
           <label>
             <input
               type="radio"
@@ -78,7 +78,7 @@ const Working = () => {
             />
             Design
           </label>
-          <br />
+
           <label>
             <input
               type="radio"
@@ -88,7 +88,6 @@ const Working = () => {
             />
             QA
           </label>
-          <br />
         </div>
         <div className="add-photo_wrap">
           <button type="add-photo">Upload</button>
