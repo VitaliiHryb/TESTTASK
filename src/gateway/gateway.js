@@ -62,3 +62,32 @@ export function fetchUser(id) {
       console.error('Error:', error);
     });
 }
+
+export const postUser = (positionId, name, email, phone, photo, token) => {
+  const formData = new FormData();
+  formData.append('position_id', positionId);
+  formData.append('name', name);
+  formData.append('email', email);
+  formData.append('phone', phone);
+  formData.append('photo', photo);
+
+  return fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      Token: token,
+    },
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      if (!data.success) {
+        throw new Error('Failed to submit user');
+      }
+      return data; // Return the data received from the API
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      throw error; // Rethrow the error to be caught in the component
+    });
+};

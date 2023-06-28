@@ -6,18 +6,20 @@ const Working = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [position, setPosition] = useState('Front-end developer');
+  const [photo, setPhoto] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
 
     // Handle the form submission, e.g., make a POST request with the form data
-    console.log('Submitted:', { name, email, phone, position });
+    console.log('Submitted:', { name, email, phone, position, photo });
 
     // Reset the form fields
     setName('');
     setEmail('');
     setPhone('');
     setPosition('');
+    setPhoto('');
   };
 
   return (
@@ -89,12 +91,21 @@ const Working = () => {
             QA
           </label>
         </div>
+
         <div className="add-photo_wrap">
-          <button type="add-photo">Upload</button>
-          <button type="upload-photo">Upload your photo</button>
+          <button type="button">Upload</button>
+          <div className="upload-input">
+            <input
+              type="text"
+              value={photo}
+              placeholder="Upload your photo"
+              onChange={e => setPhoto(e.target.value)}
+            />
+          </div>
         </div>
+
         <div className="upload-wrapper">
-          <button type="upload">Sing in</button>
+          <button type="submit">Submit</button>
         </div>
       </form>
     </div>

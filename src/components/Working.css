@@ -9,6 +9,7 @@
 .working-wrapper {
   display: flex;
   justify-content: center;
+  margin-top: 140px;
 }
 
 .working_title {
@@ -31,7 +32,8 @@ input[type='radio'] {
 
 input[type='text'],
 input[type='email'],
-input[type='tel'] {
+input[type='tel'],
+input[type='file'] {
   height: 54px;
   flex-shrink: 0;
   border-radius: 4px;
@@ -54,10 +56,10 @@ label {
   margin-bottom: 7px;
 }
 
-.upload [type='submit'] {
+button[type='submit'] {
+  background-color: #b4b4b4;
+  color: rgba(255, 255, 255, 0.87);
   padding: 10px 20px;
-  border: 1px solid black;
-  background-color: #fff;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -75,33 +77,47 @@ label {
   margin-bottom: 11px;
 }
 
-.add-photo_wrap {
-  display: flex;
+.add-photo_wrap input[type='file'] {
+  display: none;
 }
 
-button[type='add-photo'] {
+button[type='submit'] {
+  background-color: #b4b4b4;
+  color: rgba(255, 255, 255, 0.87);
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.add-photo_wrap {
+  display: flex;
+  align-items: center;
+}
+
+.add-photo_wrap button[type='button'] {
   background-color: #ffffff;
   border: 1px solid #000000;
   color: #000000;
   padding: 10px 20px;
   border-radius: 1px;
-  margin-bottom: 10px;
   height: 54px;
+  width: 83px;
 }
 
-button[type='upload-photo'] {
-  background-color: #ffffff;
+.upload-input {
+  display: flex;
+  align-items: center;
   border: 1px solid #888888;
-  color: #888888;
-  padding: 10px 20px;
   border-radius: 1px;
-  min-width: 245px;
   height: 54px;
+  flex: 1;
+  padding: 0;
 }
 
-button[type='upload'] {
-  background-color: #b4b4b4;
-  color: rgba(255, 255, 255, 0.87);
-  margin-top: 50px;
-  margin-bottom: 100px;
+.upload-input input[type='text'] {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  padding-left: 16px;
+  margin: 0;
+  border: none;
 }
