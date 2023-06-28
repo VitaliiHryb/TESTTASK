@@ -1,23 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Working.css';
+import { fetchPositions } from '../gateway/gateway';
 
-const Working = onSubmit => {
+const Working = ({ handleFormSubmit }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [position, setPosition] = useState('Front-end developer');
+  const [position, setPosition] = useState('');
   const [photo, setPhoto] = useState('');
+  const [positions, setPositions] = useState([]);
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit(position, name, email, phone, photo);
+
+    handleFormSubmit(position, name, email, phone, photo);
+
     // Reset the form fields
     setName('');
     setEmail('');
     setPhone('');
-    setPosition('Front-end developer');
+    setPosition('');
     setPhoto('');
   };
+
+  useEffect(() => {
+    fetchPositions()
+      .then(response => {
+        if (response.success) {
+          setPositions(response.positions);
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching users:', error);
+      });
+  }, []);
 
   return (
     <div className="working-container">
@@ -48,58 +64,32 @@ const Working = onSubmit => {
 
         <div className="options-container">
           <p className="select-position">Select your position:</p>
-          <label>
-            <input
-              type="radio"
-              value="Front-end developer"
-              checked={position === 'Front-end developer'}
-              onChange={() => setPosition('Front-end developer')}
-            />
-            Front-end developer
-          </label>
-
-          <label>
-            <input
-              type="radio"
-              value="Backend developer"
-              checked={position === 'Backend developer'}
-              onChange={() => setPosition('Backend developer')}
-            />
-            Backend developer
-          </label>
-
-          <label>
-            <input
-              type="radio"
-              value="Design"
-              checked={position === 'Design'}
-              onChange={() => setPosition('Design')}
-            />
-            Design
-          </label>
-
-          <label>
-            <input
-              type="radio"
-              value="QA"
-              checked={position === 'QA'}
-              onChange={() => setPosition('QA')}
-            />
-            QA
-          </label>
+          {positions.map(pos => {
+            return (
+              <label key={pos.id}>
+                <input
+                  type="radio"
+                  value={pos.id}
+                  checked={position === pos.id}
+                  onChange={() => setPosition(pos.id)}
+                />
+                {pos.name}
+              </label>
+            );
+          })}
         </div>
 
-        <div className="add-photo_wrap">
-          <button type="button">Upload</button>
-          <div className="upload-input">
-            <input
-              type="text"
-              value={photo}
-              placeholder="Upload your photo"
-              onChange={e => setPhoto(e.target.value)}
-            />
-          </div>
-        </div>
+        {/* <div className="add-photo_wrap">
+          <button type="button">Upload</button> */}
+        {/* <div className="upload-input"> */}
+        <input
+          type="file"
+          accept="image/png, image/jpeg"
+          placeholder="Upload your photo"
+          onChange={e => setPhoto(e.target.files[0])}
+        />
+        {/* </div>
+        </div> */}
 
         <div className="upload-wrapper">
           <button type="submit">Submit</button>

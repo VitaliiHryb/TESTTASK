@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Users.css';
 import { fetchUsers } from '../gateway/gateway';
 
-const Users = () => {
+const Users = user => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const Users = () => {
       .catch(error => {
         console.error('Error fetching users:', error);
       });
-  }, []);
+  }, [user]);
 
   return (
     <div className="user-container">

@@ -1,28 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TestHeader from './TestHeader';
 import Users from './Users';
 import Working from './Working';
-import { postUser } from '../gateway/gateway';
+import { postUser, fetchUsers, fetchToken } from '../gateway/gateway';
 
 const Page = () => {
+  const [newUser, setNewUser] = useState(true);
+
   const handleFormSubmit = (positionId, name, email, phone, photo) => {
-    const token = 'YOUR_TOKEN_HERE'; // Replace with your actual token
-    postUser(positionId, name, email, phone, photo, token)
-      .then(data => {
-        // Handle the successful response
-        console.log('Success:', data);
+    fetchToken()
+      .then(tokenData => {
+        const token = tokenData.token; // Extract the token from the response data
+
+        postUser(positionId, name, email, phone, photo, token)
+          .then(data => {
+            // Handle the successful response
+            console.log('Success:', data);
+
+            // Fetch the updated list of users
+            fetchUsers()
+              .then(response => {
+                if (response.success) {
+                  setNewUser(!newUser);
+                }
+              })
+              .catch(error => {
+                console.error('Error fetching users:', error);
+              });
+          })
+          .catch(error => {
+            // Handle the error
+            console.error('Error:', error);
+          });
       })
       .catch(error => {
-        // Handle the error
-        console.error('Error:', error);
+        console.error('Error fetching token:', error);
       });
   };
 
   return (
     <div className="App">
       <TestHeader />
-      <Users />
-      <Working onSubmit={handleFormSubmit} />
+      <Users user={newUser} />
+      <Working handleFormSubmit={handleFormSubmit} />
     </div>
   );
 };
