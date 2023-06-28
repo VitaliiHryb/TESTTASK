@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Working.css';
 
-const Working = () => {
+const Working = onSubmit => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -10,15 +10,12 @@ const Working = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
-    // Handle the form submission, e.g., make a POST request with the form data
-    console.log('Submitted:', { name, email, phone, position, photo });
-
+    onSubmit(position, name, email, phone, photo);
     // Reset the form fields
     setName('');
     setEmail('');
     setPhone('');
-    setPosition('');
+    setPosition('Front-end developer');
     setPhoto('');
   };
 
