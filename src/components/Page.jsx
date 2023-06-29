@@ -15,7 +15,6 @@ const Page = () => {
         postUser(positionId, name, email, phone, photo, token)
           .then(data => {
             // Handle the successful response
-            console.log('Success:', data);
 
             // Fetch the updated list of users
             fetchUsers(1, 6)

@@ -72,7 +72,6 @@ export const postUser = (positionId, name, email, phone, photo, token) => {
   })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       if (!data.success) {
         throw new Error('Failed to submit user');
       }
