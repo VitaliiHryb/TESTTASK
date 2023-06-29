@@ -18,7 +18,7 @@ const Page = () => {
             console.log('Success:', data);
 
             // Fetch the updated list of users
-            fetchUsers()
+            fetchUsers(1, 6)
               .then(response => {
                 if (response.success) {
                   setNewUser(!newUser);

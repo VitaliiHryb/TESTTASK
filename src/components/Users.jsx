@@ -6,7 +6,7 @@ const Users = user => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetchUsers()
+    fetchUsers(1, 6)
       .then(response => {
         if (response.success) {
           setUsers(response.users);
