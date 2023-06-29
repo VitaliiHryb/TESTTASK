@@ -6,6 +6,7 @@ import { postUser, fetchUsers, fetchToken } from '../gateway/gateway';
 
 const Page = () => {
   const [newUser, setNewUser] = useState(true);
+  const [newData, setNewData] = useState(true);
 
   const handleFormSubmit = (positionId, name, email, phone, photo) => {
     fetchToken()
@@ -20,7 +21,7 @@ const Page = () => {
             fetchUsers(1, 6)
               .then(response => {
                 if (response.success) {
-                  setNewUser(!newUser);
+                  setNewUser(!newData);
                 }
               })
               .catch(error => {
@@ -40,8 +41,12 @@ const Page = () => {
   return (
     <div className="App">
       <TestHeader />
-      <Users user={newUser} />
-      <Working handleFormSubmit={handleFormSubmit} />
+      <Users user={newUser} newData={newData} />
+      <Working
+        handleFormSubmit={handleFormSubmit}
+        setNewData={setNewData}
+        newData={newData}
+      />
     </div>
   );
 };

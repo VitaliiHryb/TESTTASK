@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Users.css';
 import { fetchUsers } from '../gateway/gateway';
 
-const Users = () => {
+const Users = ({ newData }) => {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
   const [showMoreButton, setShowMoreButton] = useState(true);
@@ -33,7 +33,7 @@ const Users = () => {
       .catch(error => {
         console.error('Error fetching users:', error);
       });
-  }, []);
+  }, [newData]);
 
   return (
     <div>

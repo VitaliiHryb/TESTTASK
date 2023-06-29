@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Working.css';
 import { fetchPositions } from '../gateway/gateway';
 
-const Working = ({ handleFormSubmit }) => {
+const Working = ({ handleFormSubmit, setNewData, newData }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -21,6 +21,8 @@ const Working = ({ handleFormSubmit }) => {
     setPhone('');
     setPosition('');
     setPhoto('');
+
+    setNewData(!newData);
   };
 
   useEffect(() => {
