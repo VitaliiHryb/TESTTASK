@@ -79,17 +79,20 @@ const Working = ({ handleFormSubmit }) => {
           })}
         </div>
 
-        {/* <div className="add-photo_wrap">
-          <button type="button">Upload</button> */}
-        {/* <div className="upload-input"> */}
-        <input
-          type="file"
-          accept="image/png, image/jpeg"
-          placeholder="Upload your photo"
-          onChange={e => setPhoto(e.target.files[0])}
-        />
-        {/* </div>
-        </div> */}
+        <label>
+          <div className="custom-file-upload">Upload</div>
+          <div className="custom-file-upload_placeholder">
+            Upload your photo
+          </div>
+          <input
+            id="file-upload"
+            type="file"
+            accept="image/png, image/jpeg"
+            onChange={e => setPhoto(e.target.files[0])}
+            placeholder="Upload your photo"
+            lang="en"
+          />
+        </label>
 
         <div className="upload-wrapper">
           <button type="submit">Submit</button>

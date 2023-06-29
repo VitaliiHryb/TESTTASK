@@ -32,8 +32,7 @@ input[type='radio'] {
 
 input[type='text'],
 input[type='email'],
-input[type='tel'],
-input[type='file'] {
+input[type='tel'] {
   height: 54px;
   flex-shrink: 0;
   border-radius: 4px;
@@ -45,6 +44,42 @@ input[type='file'] {
   margin-bottom: 50px;
   padding: 16px;
   box-sizing: border-box;
+}
+
+input[type='file'] {
+  display: flex;
+  position: relative;
+  bottom: 54px;
+  padding: 16px;
+  width: 100%;
+  border: 1px solid #000000;
+  display: none;
+}
+
+.custom-file-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 54px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  color: #000000;
+  border-radius: 1px;
+  height: 54px;
+  width: 83px;
+  z-index: 1;
+}
+
+.custom-file-upload_placeholder {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 380px;
+  height: 54px;
+  border-radius: 4px;
+  border: 1px solid #d0cfcf;
+  padding-left: 96px;
 }
 
 p {
@@ -77,47 +112,9 @@ button[type='submit'] {
   margin-bottom: 11px;
 }
 
-.add-photo_wrap input[type='file'] {
-  display: none;
-}
-
 button[type='submit'] {
   background-color: #b4b4b4;
   color: rgba(255, 255, 255, 0.87);
   margin-top: 50px;
   margin-bottom: 100px;
-}
-
-.add-photo_wrap {
-  display: flex;
-  align-items: center;
-}
-
-.add-photo_wrap button[type='button'] {
-  background-color: #ffffff;
-  border: 1px solid #000000;
-  color: #000000;
-  padding: 10px 20px;
-  border-radius: 1px;
-  height: 54px;
-  width: 83px;
-}
-
-.upload-input {
-  display: flex;
-  align-items: center;
-  border: 1px solid #888888;
-  border-radius: 1px;
-  height: 54px;
-  flex: 1;
-  padding: 0;
-}
-
-.upload-input input[type='text'] {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  padding-left: 16px;
-  margin: 0;
-  border: none;
 }
