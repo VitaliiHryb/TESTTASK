@@ -47,13 +47,13 @@ input[type='tel'] {
 }
 
 input[type='file'] {
-  display: flex;
-  position: relative;
-  bottom: 54px;
-  padding: 16px;
-  width: 100%;
-  border: 1px solid #000000;
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 
 .custom-file-upload {
