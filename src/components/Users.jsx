@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useContext } from 'react';
-import './Users.css';
+import './Users.scss';
 import { fetchUsers } from '../gateway/gateway';
 import ScrollContext from '../gateway/ScrollContext';
 

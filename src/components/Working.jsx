@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
-import './Working.css';
+import './Working.scss';
 import { fetchPositions } from '../gateway/gateway';
 import ScrollContext from '../gateway/ScrollContext';
 

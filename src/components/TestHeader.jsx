@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Logo from '../images/Logo.svg';
 import backgroundImage from '../images/pexels-alexandr-podvalny-1227513.jpeg';
-import '../components/TestHeader.css';
+import '../components/TestHeader.scss';
 import ScrollContext from '../gateway/ScrollContext';
 
 const TestHeader = () => {
