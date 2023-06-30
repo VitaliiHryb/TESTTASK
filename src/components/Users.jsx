@@ -46,8 +46,8 @@ const Users = ({ newData }) => {
           {users.map(user => (
             <div className="block" key={user.id}>
               <img src={user.photo} alt={user.name} />
-              <h2>{user.name}</h2>
-              <p>{user.position}</p>
+              <h2 className="truncate">{user.name}</h2>
+              <p className="truncate">{user.position}</p>
             </div>
           ))}
         </div>

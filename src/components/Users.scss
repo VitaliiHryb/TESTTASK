@@ -42,6 +42,17 @@
   margin: 0;
 }
 
+.truncate {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  max-height: 3.6em; /* Adjust this value based on your font size and line height */
+  line-height: 1.8em; /* Adjust this value based on your font size and line height */
+}
+
 .block-button {
   margin-top: 50px;
   margin-bottom: 140px;
