@@ -1,3 +1,7 @@
+# Netlify link
+
+This project was posted on https://cheery-buttercream-6c5ec2.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

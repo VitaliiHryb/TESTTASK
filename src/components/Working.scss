@@ -98,6 +98,16 @@ button[type='submit'] {
   cursor: pointer;
 }
 
+button[type='submit']:disabled {
+  background-color: #b4b4b4;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+button[type='submit']:not(:disabled) {
+  background-color: #f4e041;
+  color: #000000de;
+}
+
 .options-container {
   display: flex;
   flex-direction: column;

@@ -10,21 +10,7 @@ const Working = ({ handleFormSubmit, setNewData, newData }) => {
   const [position, setPosition] = useState('');
   const [photo, setPhoto] = useState('');
   const [positions, setPositions] = useState([]);
-
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    handleFormSubmit(position, name, email, phone, photo);
-
-    // Reset the form fields
-    setName('');
-    setEmail('');
-    setPhone('');
-    setPosition('');
-    setPhoto('');
-
-    setNewData(!newData);
-  };
+  const [formValid, setFormValid] = useState(false); // State for form validation
 
   useEffect(() => {
     fetchPositions().then(response => {
@@ -43,6 +29,32 @@ const Working = ({ handleFormSubmit, setNewData, newData }) => {
       setScrollToWorking(false); // Reset the state after the scroll
     }
   }, [scrollToWorking, setScrollToWorking]);
+
+  useEffect(() => {
+    // Update the form validity whenever any field changes
+    setFormValid(
+      name !== '' &&
+        email !== '' &&
+        phone !== '' &&
+        position !== '' &&
+        photo !== '',
+    );
+  }, [name, email, phone, position, photo]);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    handleFormSubmit(position, name, email, phone, photo);
+
+    // Reset the form fields
+    setName('');
+    setEmail('');
+    setPhone('');
+    setPosition('');
+    setPhoto('');
+
+    setNewData(!newData);
+  };
 
   return (
     <div ref={workingRef}>
@@ -105,7 +117,9 @@ const Working = ({ handleFormSubmit, setNewData, newData }) => {
           </label>
 
           <div className="upload-wrapper">
-            <button type="submit">Submit</button>
+            <button type="submit" disabled={!formValid}>
+              Submit
+            </button>
           </div>
         </form>
       </div>
