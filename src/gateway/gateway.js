@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+
 export function fetchToken() {
   return fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token')
     .then(function (response) {
@@ -7,7 +9,7 @@ export function fetchToken() {
       return response.json();
     })
     .catch(function (error) {
-      console.error('Error:', error);
+      toast.error(`Error: ${error}`);
     });
 }
 
@@ -22,7 +24,7 @@ export function fetchPositions() {
       return response.json();
     })
     .catch(function (error) {
-      console.error('Error:', error);
+      toast.error(`Error: ${error}`);
     });
 }
 
@@ -36,7 +38,7 @@ export function fetchUsers(page, count) {
       return response.json();
     })
     .catch(error => {
-      console.error('Error fetching users:', error);
+      toast.error(`Error fetching users: ${error}`);
     });
 }
 
@@ -51,7 +53,7 @@ export function fetchUser(id) {
       return response.json();
     })
     .catch(function (error) {
-      console.error('Error:', error);
+      toast.error(`Error: ${error}`);
     });
 }
 
@@ -78,6 +80,6 @@ export const postUser = (positionId, name, email, phone, photo, token) => {
       return data; // Return the data received from the API
     })
     .catch(error => {
-      console.error('Error:', error);
+      toast.error(`Error: ${error}`);
     });
 };
