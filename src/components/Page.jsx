@@ -9,6 +9,7 @@ const Page = () => {
   const [newUser, setNewUser] = useState(true);
   const [newData, setNewData] = useState(true);
   const [scrollToWorking, setScrollToWorking] = useState(false);
+  const [scrollToUsers, setScrollToUsers] = useState(false);
 
   const handleFormSubmit = (positionId, name, email, phone, photo) => {
     fetchToken()
@@ -42,7 +43,14 @@ const Page = () => {
 
   return (
     <div className="App">
-      <ScrollContext.Provider value={{ scrollToWorking, setScrollToWorking }}>
+      <ScrollContext.Provider
+        value={{
+          scrollToWorking,
+          setScrollToWorking,
+          scrollToUsers,
+          setScrollToUsers,
+        }}
+      >
         <TestHeader />
         <Users user={newUser} newData={newData} />
         <Working

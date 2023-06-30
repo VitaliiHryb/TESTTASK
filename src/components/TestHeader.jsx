@@ -6,9 +6,14 @@ import ScrollContext from '../gateway/ScrollContext';
 
 const TestHeader = () => {
   const { scrollToWorking, setScrollToWorking } = useContext(ScrollContext);
+  const { scrollToUsers, setScrollToUsers } = useContext(ScrollContext);
 
   const handleSignUpClick = () => {
     setScrollToWorking(true);
+  };
+
+  const handleUsers = () => {
+    setScrollToUsers(true);
   };
 
   return (
@@ -18,7 +23,9 @@ const TestHeader = () => {
           <img src={Logo} alt="Logo" />
         </div>
         <div className="buttons">
-          <button className="users">Users</button>
+          <button className="users" onClick={handleUsers}>
+            Users
+          </button>
           <button className="sing" onClick={handleSignUpClick}>
             Sign up
           </button>
