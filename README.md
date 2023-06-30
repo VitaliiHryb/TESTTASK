@@ -1,6 +1,22 @@
-# Netlify link
+# Calendar
 
-This project was posted on https://cheery-buttercream-6c5ec2.netlify.app/
+### [Netify Site link](https://cheery-buttercream-6c5ec2.netlify.app/)
+
+#### Layout is responsive
+
+### The tech stack is:
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [Flexbox](https://en.wikipedia.org/wiki/CSS_Flexible_Box_Layout)
+- [Sass (Scss)](https://sass-lang.com/)
+- [BEM methodology](https://en.bem.info/methodology/)
+- [React JavaScript library](https://reactjs.org/)
+- [React useState, useEffect Hooks](https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects)
+
+## Author
+
+- ### Vitalii Hryb
 
 # Getting Started with Create React App
 
