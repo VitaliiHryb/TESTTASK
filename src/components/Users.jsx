@@ -41,6 +41,7 @@ const Users = ({ newData }) => {
   return (
     <div ref={workingRef}>
       <div>
+        <p className="user-title">Working with GET request</p>
         <div className="user-container">
           {users.map(user => (
             <div className="block" key={user.id}>

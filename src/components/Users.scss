@@ -10,6 +10,7 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .block {
@@ -54,9 +55,19 @@
   line-height: 40px;
 }
 
+.user-title {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  margin-top: 140px;
+  margin-bottom: 50px;
+}
+
 @media (min-width: 1024px) {
   .user-container {
     justify-content: flex-start;
+    margin-left: 20px;
   }
 
   .block {
