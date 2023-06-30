@@ -3,10 +3,12 @@ import TestHeader from './TestHeader';
 import Users from './Users';
 import Working from './Working';
 import { postUser, fetchUsers, fetchToken } from '../gateway/gateway';
+import ScrollContext from '../gateway/ScrollContext';
 
 const Page = () => {
   const [newUser, setNewUser] = useState(true);
   const [newData, setNewData] = useState(true);
+  const [scrollToWorking, setScrollToWorking] = useState(false);
 
   const handleFormSubmit = (positionId, name, email, phone, photo) => {
     fetchToken()
@@ -40,13 +42,15 @@ const Page = () => {
 
   return (
     <div className="App">
-      <TestHeader />
-      <Users user={newUser} newData={newData} />
-      <Working
-        handleFormSubmit={handleFormSubmit}
-        setNewData={setNewData}
-        newData={newData}
-      />
+      <ScrollContext.Provider value={{ scrollToWorking, setScrollToWorking }}>
+        <TestHeader />
+        <Users user={newUser} newData={newData} />
+        <Working
+          handleFormSubmit={handleFormSubmit}
+          setNewData={setNewData}
+          newData={newData}
+        />
+      </ScrollContext.Provider>
     </div>
   );
 };

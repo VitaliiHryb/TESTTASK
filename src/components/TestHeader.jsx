@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Logo from '../images/Logo.svg';
 import backgroundImage from '../images/pexels-alexandr-podvalny-1227513.jpeg';
 import '../components/TestHeader.css';
+import ScrollContext from '../gateway/ScrollContext';
 
 const TestHeader = () => {
+  const { scrollToWorking, setScrollToWorking } = useContext(ScrollContext);
+
+  const handleSignUpClick = () => {
+    setScrollToWorking(true);
+  };
+
   return (
     <div className="test-container">
       <div className="header">
@@ -12,7 +19,9 @@ const TestHeader = () => {
         </div>
         <div className="buttons">
           <button className="users">Users</button>
-          <button className="sing">Sign up</button>
+          <button className="sing" onClick={handleSignUpClick}>
+            Sign up
+          </button>
         </div>
       </div>
       <div
@@ -34,7 +43,7 @@ const TestHeader = () => {
           mind. They should also be excited to learn, as the world of Front-End
           Development keeps evolving.
         </p>
-        <button>Sign up</button>
+        <button onClick={handleSignUpClick}>Sign up</button>
       </div>
     </div>
   );
