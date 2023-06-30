@@ -79,6 +79,5 @@ export const postUser = (positionId, name, email, phone, photo, token) => {
     })
     .catch(error => {
       console.error('Error:', error);
-      throw error; // Rethrow the error to be caught in the component
     });
 };

@@ -27,15 +27,11 @@ const Working = ({ handleFormSubmit, setNewData, newData }) => {
   };
 
   useEffect(() => {
-    fetchPositions()
-      .then(response => {
-        if (response.success) {
-          setPositions(response.positions);
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching users:', error);
-      });
+    fetchPositions().then(response => {
+      if (response.success) {
+        setPositions(response.positions);
+      }
+    });
   }, []);
 
   const { scrollToWorking, setScrollToWorking } = useContext(ScrollContext);
@@ -96,7 +92,7 @@ const Working = ({ handleFormSubmit, setNewData, newData }) => {
           <label>
             <div className="custom-file-upload">Upload</div>
             <div className="custom-file-upload_placeholder">
-              Upload your photo
+              {photo ? photo.name : 'Upload your photo'}
             </div>
             <input
               id="file-upload"

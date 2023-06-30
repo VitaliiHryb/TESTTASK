@@ -10,30 +10,22 @@ const Users = ({ newData }) => {
 
   const fetchMoreUsers = () => {
     const nextPage = page + 1;
-    fetchUsers(nextPage, 6)
-      .then(response => {
-        if (response.success) {
-          setUsers(response.users);
-          setPage(nextPage);
-          setShowMoreButton(nextPage < response.total_pages);
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching users:', error);
-      });
+    fetchUsers(nextPage, 6).then(response => {
+      if (response.success) {
+        setUsers(response.users);
+        setPage(nextPage);
+        setShowMoreButton(nextPage < response.total_pages);
+      }
+    });
   };
 
   useEffect(() => {
-    fetchUsers(1, 6)
-      .then(response => {
-        if (response.success) {
-          setUsers(response.users);
-          setShowMoreButton(response.page < response.total_pages);
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching users:', error);
-      });
+    fetchUsers(1, 6).then(response => {
+      if (response.success) {
+        setUsers(response.users);
+        setShowMoreButton(response.page < response.total_pages);
+      }
+    });
   }, [newData]);
 
   const { scrollToUsers, setScrollToUsers } = useContext(ScrollContext);
