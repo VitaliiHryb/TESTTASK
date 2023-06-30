@@ -5,8 +5,7 @@ import '../components/TestHeader.css';
 import ScrollContext from '../gateway/ScrollContext';
 
 const TestHeader = () => {
-  const { scrollToWorking, setScrollToWorking } = useContext(ScrollContext);
-  const { scrollToUsers, setScrollToUsers } = useContext(ScrollContext);
+  const { setScrollToUsers, setScrollToWorking } = useContext(ScrollContext);
 
   const handleSignUpClick = () => {
     setScrollToWorking(true);
