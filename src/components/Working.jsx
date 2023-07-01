@@ -1,16 +1,16 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import './Working.scss';
-import { fetchPositions } from '../gateway/gateway';
 import ScrollContext from '../gateway/ScrollContext';
+import { fetchPositions } from '../gateway/gateway';
 
-const Working = ({ handleFormSubmit, setNewData, newData }) => {
+const Working = ({ handleFormSubmit, setFormSubmitted }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [position, setPosition] = useState('');
   const [photo, setPhoto] = useState('');
   const [positions, setPositions] = useState([]);
-  const [formValid, setFormValid] = useState(false); // State for form validation
+  const [formValid, setFormValid] = useState(false);
 
   useEffect(() => {
     fetchPositions().then(response => {
@@ -26,17 +26,16 @@ const Working = ({ handleFormSubmit, setNewData, newData }) => {
   useEffect(() => {
     if (scrollToWorking && workingRef.current) {
       workingRef.current.scrollIntoView({ behavior: 'smooth' });
-      setScrollToWorking(false); // Reset the state after the scroll
+      setScrollToWorking(false);
     }
   }, [scrollToWorking, setScrollToWorking]);
 
   useEffect(() => {
-    // Update the form validity whenever any field changes
     setFormValid(
-      name !== '' &&
-        email !== '' &&
-        phone !== '' &&
-        position !== '' &&
+      name.trim() !== '' &&
+        email.trim() !== '' &&
+        phone.trim() !== '' &&
+        position.trim() !== '' &&
         photo !== '',
     );
   }, [name, email, phone, position, photo]);
@@ -46,23 +45,22 @@ const Working = ({ handleFormSubmit, setNewData, newData }) => {
 
     handleFormSubmit(position, name, email, phone, photo);
 
-    // Reset the form fields
     setName('');
     setEmail('');
     setPhone('');
     setPosition('');
     setPhoto('');
 
-    setNewData(!newData);
+    setFormSubmitted(true);
   };
 
   return (
     <div ref={workingRef}>
       <div className="working-container">
         <div className="working-wrapper">
-          <h1 className="working_title">Working with POST request</h1>
+          <h1 className="working-title">Working with POST request</h1>
         </div>
-        <form className="working_form" onSubmit={handleSubmit}>
+        <form className="working-form" onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Your name"
@@ -86,24 +84,22 @@ const Working = ({ handleFormSubmit, setNewData, newData }) => {
 
           <div className="options-container">
             <p className="select-position">Select your position:</p>
-            {positions.map(pos => {
-              return (
-                <label key={pos.id}>
-                  <input
-                    type="radio"
-                    value={pos.id}
-                    checked={position === pos.id}
-                    onChange={() => setPosition(pos.id)}
-                  />
-                  {pos.name}
-                </label>
-              );
-            })}
+            {positions.map(pos => (
+              <label key={pos.id}>
+                <input
+                  type="radio"
+                  value={pos.id}
+                  checked={position === pos.id}
+                  onChange={() => setPosition(pos.id)}
+                />
+                {pos.name}
+              </label>
+            ))}
           </div>
 
           <label>
             <div className="custom-file-upload">Upload</div>
-            <div className="custom-file-upload_placeholder">
+            <div className="custom-file-upload-placeholder">
               {photo ? photo.name : 'Upload your photo'}
             </div>
             <input

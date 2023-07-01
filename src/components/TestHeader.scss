@@ -1,6 +1,6 @@
 $font-family: 'Nunito', sans-serif;
 
-.test-container {
+.test-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,12 +17,12 @@ $font-family: 'Nunito', sans-serif;
   background-color: #fff;
 }
 
-.logo {
+.header__logo {
   display: flex;
   align-items: center;
 }
 
-.logo img {
+.header__logo img {
   height: 40px;
   width: 104px;
 }
@@ -42,34 +42,33 @@ $font-family: 'Nunito', sans-serif;
   max-width: 1024px;
 }
 
-h2 {
+.content-background__test-assignment {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
-p {
+.content-background__defines {
   font-size: 16px;
   margin-bottom: 20px;
+  width: 380px;
 }
 
-.users {
+.header__buttons {
+  display: flex;
+}
+
+.header__button {
   margin-right: 10px;
 }
 
-.test-assignment {
-  font-size: 40px;
-  font-family: $font-family;
-  line-height: 40px;
-}
-
-.defines {
-  font-size: 16px;
+.content-background__test-assignment,
+.content-background__defines {
   font-family: $font-family;
   line-height: 26px;
-  margin-bottom: 32px;
 }
 
-.test-assignment,
-.defines {
-  width: 380px;
+.content-background__button {
+  font-family: $font-family;
+  font-size: 16px;
+  margin-bottom: 32px;
 }

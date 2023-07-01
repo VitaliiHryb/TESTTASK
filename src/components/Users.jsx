@@ -39,7 +39,7 @@ const Users = ({ newData }) => {
   }, [scrollToUsers, setScrollToUsers]);
 
   return (
-    <div ref={workingRef}>
+    <div className="users-container" ref={workingRef}>
       <div>
         <p className="user-title">Working with GET request</p>
         <div className="user-container">

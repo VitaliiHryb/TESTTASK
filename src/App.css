@@ -11,13 +11,13 @@ body {
   align-items: center;
 }
 
-.App {
+.page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 1;
-  max-width: 1024px; /* Add this line */
+  max-width: 1024px;
 }
 
 button {

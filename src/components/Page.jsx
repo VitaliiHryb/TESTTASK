@@ -28,7 +28,7 @@ const Page = () => {
   };
 
   return (
-    <div className="App">
+    <div className="page">
       <ScrollContext.Provider
         value={{
           scrollToWorking,

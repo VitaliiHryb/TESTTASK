@@ -16,16 +16,22 @@ const TestHeader = () => {
   };
 
   return (
-    <div className="test-container">
+    <div className="test-header">
       <div className="header">
-        <div className="logo">
+        <div className="header__logo">
           <img src={Logo} alt="Logo" />
         </div>
-        <div className="buttons">
-          <button className="users" onClick={handleUsers}>
+        <div className="header__buttons">
+          <button
+            className="header__button header__button--users"
+            onClick={handleUsers}
+          >
             Users
           </button>
-          <button className="sing" onClick={handleSignUpClick}>
+          <button
+            className="header__button header__button--sign"
+            onClick={handleSignUpClick}
+          >
             Sign up
           </button>
         </div>
@@ -39,17 +45,22 @@ const TestHeader = () => {
           color: '#fff',
         }}
       >
-        <h2 className="test-assignment">
+        <h2 className="content-background__test-assignment">
           Test assignment for front-end developer
         </h2>
-        <p className="defines">
+        <p className="content-background__defines">
           What defines a good front-end developer is one that has skilled
           knowledge of HTML, CSS, JS with a vast understanding of User design
           thinking as they'll be building web interfaces with accessibility in
           mind. They should also be excited to learn, as the world of Front-End
           Development keeps evolving.
         </p>
-        <button onClick={handleSignUpClick}>Sign up</button>
+        <button
+          className="content-background__button"
+          onClick={handleSignUpClick}
+        >
+          Sign up
+        </button>
       </div>
     </div>
   );

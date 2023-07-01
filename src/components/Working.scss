@@ -11,14 +11,14 @@
   justify-content: center;
 }
 
-.working_title {
+.working-title {
   font-size: 40px;
   line-height: 40px;
   text-align: center;
   margin: 0 32px 50px 32px;
 }
 
-.working_form {
+.working-form {
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -70,7 +70,7 @@ input[type='file'] {
   z-index: 1;
 }
 
-.custom-file-upload_placeholder {
+.custom-file-upload-placeholder {
   display: flex;
   align-items: center;
   position: relative;
