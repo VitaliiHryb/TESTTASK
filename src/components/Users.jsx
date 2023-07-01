@@ -51,11 +51,15 @@ const Users = ({ newData }) => {
             </div>
           ))}
         </div>
-        {showMoreButton && (
+        {showMoreButton ? (
           <div className="show-more-container">
             <button className="block-button" onClick={fetchMoreUsers}>
               Show more
             </button>
+          </div>
+        ) : (
+          <div className="show-more-container">
+            <button className="block-button hidden">Show more</button>
           </div>
         )}
       </div>

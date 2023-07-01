@@ -42,6 +42,10 @@
   margin: 0;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .truncate {
   overflow: hidden;
   display: -webkit-box;
