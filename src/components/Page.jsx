@@ -18,7 +18,11 @@ const Page = () => {
       postUser(positionId, name, email, phone, photo, token).then(response => {
         if (response.success) {
           // Fetch the updated list of users
-          fetchUsers(1, 6);
+          fetchUsers(1, 6).then(response => {
+            if (response.success) {
+              setNewData(true);
+            }
+          });
         }
       });
     });
