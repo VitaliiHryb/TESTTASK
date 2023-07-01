@@ -48,6 +48,8 @@ const Users = ({ newData }) => {
               <img src={user.photo} alt={user.name} />
               <h2 className="truncate">{user.name}</h2>
               <p>{user.position}</p>
+              <p>{user.email}</p>
+              <p>{user.phone}</p>
             </div>
           ))}
         </div>

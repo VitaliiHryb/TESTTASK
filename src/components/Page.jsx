@@ -4,7 +4,6 @@ import Users from './Users';
 import Working from './Working';
 import { postUser, fetchUsers, fetchToken } from '../gateway/gateway';
 import ScrollContext from '../gateway/ScrollContext';
-// import { toast } from 'react-toastify';
 
 const Page = () => {
   const [newData, setNewData] = useState(true);
