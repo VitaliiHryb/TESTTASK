@@ -14,6 +14,7 @@
 - [React JavaScript library](https://reactjs.org/)
 - [React useState, useEffect Hooks](https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects)
 - [react-toastify](https://www.npmjs.com/package/react-toastify)
+- [webpack](https://webpack.js.org/)
 
 ## Author
 
