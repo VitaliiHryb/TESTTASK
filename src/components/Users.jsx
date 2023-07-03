@@ -34,7 +34,7 @@ const Users = ({ newData }) => {
   useEffect(() => {
     if (scrollToUsers && workingRef.current) {
       workingRef.current.scrollIntoView({ behavior: 'smooth' });
-      setScrollToUsers(false); // Reset the state after the scroll
+      setScrollToUsers(false);
     }
   }, [scrollToUsers, setScrollToUsers]);
 

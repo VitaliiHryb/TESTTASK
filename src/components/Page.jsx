@@ -12,11 +12,10 @@ const Page = () => {
 
   const handleFormSubmit = (positionId, name, email, phone, photo) => {
     fetchToken().then(tokenData => {
-      const token = tokenData.token; // Extract the token from the response data
+      const token = tokenData.token;
 
       postUser(positionId, name, email, phone, photo, token).then(response => {
         if (response.success) {
-          // Fetch the updated list of users
           fetchUsers(1, 6).then(response => {
             if (response.success) {
               setNewData(true);

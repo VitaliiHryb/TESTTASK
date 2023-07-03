@@ -77,7 +77,7 @@ export const postUser = (positionId, name, email, phone, photo, token) => {
       if (!data.success) {
         throw new Error('Failed to submit user');
       }
-      return data; // Return the data received from the API
+      return data;
     })
     .catch(error => {
       toast.error(`Error: ${error}`);
